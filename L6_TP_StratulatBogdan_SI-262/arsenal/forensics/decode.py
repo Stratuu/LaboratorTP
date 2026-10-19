@@ -43,17 +43,20 @@ def desfa(s):
 
 
 # A4
-def citibil(b):
-    return all(32 <= c < 127 for c in b)
- 
 val = "NTM1OTU3NTk="
+
 for _ in range(8):
     strat, b = desfa(val)
-    if citibil(b):
-        print (b.decode())
-        break
-    val = b.decode()
 
+    print(strat, b)
+
+    text = b.decode()
+
+    if strat == "hex" and citibil(b):
+        print(text)
+        break
+
+    val = text
 
 
 # A5
